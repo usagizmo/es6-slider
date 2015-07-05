@@ -86,8 +86,7 @@ gulp.task('watch', function() {
 gulp.task('livereload', function() {
   livereload.listen();
   gulp.watch([
-    'public/js/*',
-    'public/css/*'
+    'public/**/*',
   ]).on('change', livereload.changed);
 });
 
