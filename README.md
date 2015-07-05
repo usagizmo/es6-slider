@@ -1,4 +1,4 @@
-# ES6スライダー
+# ES6 Slider
 
 ES6とjQueryを利用したスライダーのサンプル
 
@@ -18,8 +18,26 @@ make server
 **Terminal 2**
 
 ```shell
-make open 
+make open
 #=> open http://localhost:8000
 
 gulp
 ```
+
+## ブランチ紹介
+
+**実装前**
+
+```
+git checkout before
+```
+
+JavaScriptを実装すべき箇所にコメントが入っています。  
+
+**実装後**
+
+```
+git checkout after
+```
+
+実装サンプルです。
