@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "ecmascript": 6
+  },
+  "rules": {
+    "quotes": [1, "single"]
+  }
+}
