@@ -1,5 +1,55 @@
 @import '../../node_modules/normalize.css/normalize.css';
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: crimson;
+}
+
+.unselectable {
+  -webkit-user-select:      none;
+     -moz-user-select: -moz-none;
+      -ms-user-select:      none;
+          user-select:      none;
+
+  -khtml-user-select: none;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+  &-panel {
+    position: absolute;
+    display: table;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    // transition: left .2s;
+    text-align: center;
+    background-color: #fff;
+
+    .unselectable;
+    &-inner {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  &-prev, &-next {
+    position: absolute;
+    bottom: 20px;
+    transition: opacity .2s;
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &-prev {
+    left: 16px;
+  }
+  &-next {
+    right: 16px;
+  }
 }

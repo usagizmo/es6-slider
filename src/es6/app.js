@@ -1,3 +1,4 @@
 var $ = require('jquery');
+var Slider = require('./slider.js');
 
-console.log('ok!');
+var slider = new Slider($('#slider'));
