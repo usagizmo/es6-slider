@@ -12,14 +12,19 @@ export default class SliderPanel {
  }
 
   setSize() {
-    // パネルのサイズを設定
+    this.width = this.$el.width();
+    this.height = this.$el.height();
   }
 
-  setPostion(position = {top: 0, left: 0}) {
-    // パネルの位置を設定
+  setPostion(position) {
+    this.$el.css(position);
   }
 
   setBindings() {
-    // クリックイベント => パネルの変更
+    var self = this;
+    self.$el.on('click', function() {
+      var index = $(this).data('index');
+      self.slider.setPanel(index);
+    });
   }
 }

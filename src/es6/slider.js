@@ -15,19 +15,41 @@ export default class Slider {
  }
 
   setSize() {
-    // スライダーのサイズを設定
+    this.width = $(window).width();
+    this.height = $(window).height();
   }
 
   setPanels() {
-    // パネルの初期化
+    var self = this;
+    self.panels = [];
+    self.$el.find('.slider-panel').each(function() {
+      self.panels.push(new SliderPanel(self, $(this)));
+    });
   }
 
   setPanel(index) {
-    // 現在表示されているパネルのインデックスの設定
+    this.panelIndex = index;
     this.lineUp();
   }
 
   lineUp() {
-    // パネルの整列
+    this.panels.forEach((panel, i) => {
+      let position = {
+        top: this.height / 2 - panel.height / 2,
+        left: 0
+      };
+      if (i < this.panelIndex - 1) {
+        position.left = -this.width;
+      } else if (i === this.panelIndex - 1) {
+        position.left = -panel.width + this.width * 0.1;
+      } else if (i === this.panelIndex) {
+        position.left = this.width / 2 - panel.width / 2;
+      } else if (i === this.panelIndex + 1) {
+        position.left = this.width - this.width * 0.1;
+      } else if (i > this.panelIndex + 1) {
+        position.left = this.width;
+      }
+      panel.setPostion(position);
+    });
   }
 }
