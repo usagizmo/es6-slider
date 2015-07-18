@@ -1,5 +1,5 @@
-var $ = require('jquery');
-var SliderPanel = require('./slider-panel.js');
+import $ from 'jquery';
+import SliderPanel from './slider-panel';
 
 export default class Slider {
   constructor($el) {
@@ -15,41 +15,19 @@ export default class Slider {
  }
 
   setSize() {
-    this.width = $(window).width();
-    this.height = $(window).height();
+    // スライダーのサイズを設定
   }
 
   setPanels() {
-    var self = this;
-    self.panels = [];
-    self.$el.find('.slider-panel').each(function() {
-      self.panels.push(new SliderPanel(self, $(this)));
-    });
+    // パネルの初期化
   }
 
   setPanel(index) {
-    this.panelIndex = index;
+    // 現在表示されているパネルのインデックスの設定
     this.lineUp();
   }
 
   lineUp() {
-    this.panels.forEach((panel, i) => {
-      let position = {
-        top: this.height / 2 - panel.height / 2,
-        left: 0
-      };
-      if (i < this.panelIndex - 1) {
-        position.left = -this.width;
-      } else if (i === this.panelIndex - 1) {
-        position.left = -panel.width + this.width * 0.1;
-      } else if (i === this.panelIndex) {
-        position.left = this.width / 2 - panel.width / 2;
-      } else if (i === this.panelIndex + 1) {
-        position.left = this.width - this.width * 0.1;
-      } else if (i > this.panelIndex + 1) {
-        position.left = this.width;
-      }
-      panel.setPostion(position);
-    });
+    // パネルの整列
   }
 }

@@ -6,10 +6,10 @@
   "license": "MIT",
   "devDependencies": {
     "babelify": "^6.1.2",
+    "browser-sync": "^2.7.13",
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
-    "gulp-livereload": "^3.8.0",
     "gulp-minify-css": "^1.1.6",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
@@ -24,5 +24,8 @@
   "dependencies": {
     "jquery": "^2.1.4",
     "normalize.css": "^3.0.3"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }

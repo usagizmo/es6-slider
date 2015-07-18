@@ -16,7 +16,7 @@ var assign = require('lodash.assign');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 
-var livereload = require('gulp-livereload');
+var browserSync = require('browser-sync');
 
 /**
  * Utilities
@@ -84,10 +84,13 @@ gulp.task('watch', function() {
 });
 
 gulp.task('livereload', function() {
-  livereload.listen();
-  gulp.watch([
-    'public/**/*',
-  ]).on('change', livereload.changed);
+  browserSync({
+    server: {
+      baseDir: 'public'
+    }
+  });
+
+  gulp.watch('public/**/*', browserSync.reload);
 });
 
 gulp.task('default', [
