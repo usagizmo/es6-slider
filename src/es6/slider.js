@@ -1,5 +1,5 @@
-var $ = require('jquery');
-var SliderPanel = require('./slider-panel.js');
+import $ from 'jquery';
+import SliderPanel from './slider-panel';
 
 export default class Slider {
   constructor($el) {
