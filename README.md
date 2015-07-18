@@ -2,6 +2,8 @@
 
 ES6とjQueryを利用したスライダーのサンプル
 
+![](src/gif/thumb.gif)
+
 ## インストール/使い方
 
 **Terminal 1**
