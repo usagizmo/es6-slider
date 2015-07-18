@@ -1,9 +1,11 @@
 import $ from 'jquery';
 
 export default class SliderPanel {
-  constructor(slider, $el) {
+  constructor(slider, index, $el) {
     this.slider = slider;
+    this.index = index;
     this.$el = $el;
+
     this.width = 0;
     this.height = 0;
 
@@ -21,10 +23,8 @@ export default class SliderPanel {
   }
 
   setBindings() {
-    var self = this;
-    self.$el.on('click', function() {
-      var index = $(this).data('index');
-      self.slider.setPanel(index);
+    this.$el.on('click', () => {
+      this.slider.setPanel(this.index);
     });
   }
 }

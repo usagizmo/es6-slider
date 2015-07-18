@@ -4,6 +4,7 @@ import SliderPanel from './slider-panel';
 export default class Slider {
   constructor($el) {
     this.$el = $el;
+
     this.width = 0;
     this.height = 0;
     this.panels = [];
@@ -20,10 +21,9 @@ export default class Slider {
   }
 
   setPanels() {
-    var self = this;
-    self.panels = [];
-    self.$el.find('.slider-panel').each(function() {
-      self.panels.push(new SliderPanel(self, $(this)));
+    this.panels = [];
+    this.$el.find('.slider-panel').each((i, el) => {
+      this.panels.push(new SliderPanel(this, i, $(el)));
     });
   }
 
