@@ -6,7 +6,7 @@ ES6とjQueryを利用したスライダーのサンプル
 
 ## インストール/使い方
 
-**Terminal 1**
+**Terminal**
 
 ```shell
 npm install
